@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>初识SampleSite | Kooboo CMS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="SampleSite是什么简单说SampleSite是Kooboo CMS默认自带的一个简单的示例站点，初次进入Kooboo CMS后台后第一眼看到的就是SampleSite。虽说是一个简单的示例站点，但是，麻雀虽小五脏俱全，从SampleSite入手是一个很好的入门方式。
+SampleSite前台概览
+
+
+
+
+
+SampleSite后台概览">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识SampleSite">
+<meta property="og:url" content="http://www.kooboo.me/2016/12-31/sample-site/index.html">
+<meta property="og:site_name" content="Kooboo CMS">
+<meta property="og:description" content="SampleSite是什么简单说SampleSite是Kooboo CMS默认自带的一个简单的示例站点，初次进入Kooboo CMS后台后第一眼看到的就是SampleSite。虽说是一个简单的示例站点，但是，麻雀虽小五脏俱全，从SampleSite入手是一个很好的入门方式。
+SampleSite前台概览
+
+
+
+
+
+SampleSite后台概览">
+<meta property="og:image" content="http://www.kooboo.me/articles.jpg">
+<meta property="og:image" content="http://www.kooboo.me/about.jpg">
+<meta property="og:image" content="http://www.kooboo.me/detail.jpg">
+<meta property="og:image" content="http://www.kooboo.me/login.jpg">
+<meta property="og:image" content="http://www.kooboo.me/register.jpg">
+<meta property="og:image" content="http://www.kooboo.me/forget-password.jpg">
+<meta property="og:updated_time" content="2016-12-31T08:07:40.818Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="初识SampleSite">
+<meta name="twitter:description" content="SampleSite是什么简单说SampleSite是Kooboo CMS默认自带的一个简单的示例站点，初次进入Kooboo CMS后台后第一眼看到的就是SampleSite。虽说是一个简单的示例站点，但是，麻雀虽小五脏俱全，从SampleSite入手是一个很好的入门方式。
+SampleSite前台概览
+
+
+
+
+
+SampleSite后台概览">
+<meta name="twitter:image" content="http://www.kooboo.me/articles.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Kooboo CMS" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="http://fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/unslider/2.0.3/css/unslider.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?19a46999a8663e78e0474eecce13524b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="logo" href="/">
+        <img src="/images/logo.png" />
+      </a>
+      
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/docs/">技术文档</a></li>
+        <li><a href="/archives/">文章中心</a></li>
+        <li><a href="/extensions/">CMS拓展</a></li>
+        <li><a href="/downloads/">下载中心</a></li>
+        <li><a href="/about/">关于我们</a></li>
+        <li><a href="https://github.com/Tsingbo-Kooboo/KoobooMvc5" target="_blank">获取源码</a></li>
+        </ul>
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+    
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">Kooboo CMS</h1>
+  
+</div>
+
+    <div class="row">
+      
+        <div class="col-sm-12 blog-main">
+          <article id="post-sample-site" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      初识SampleSite
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2016/12-31/sample-site/" class="article-date"><time datetime="2016-12-31T13:44:20.000Z" itemprop="datePublished">2016-12-31</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="SampleSite是什么"><a href="#SampleSite是什么" class="headerlink" title="SampleSite是什么"></a>SampleSite是什么</h3><p>简单说SampleSite是Kooboo CMS默认自带的一个简单的示例站点，初次进入Kooboo CMS后台后第一眼看到的就是SampleSite。虽说是一个简单的示例站点，但是，麻雀虽小五脏俱全，从SampleSite入手是一个很好的入门方式。</p>
+<h3 id="SampleSite前台概览"><a href="#SampleSite前台概览" class="headerlink" title="SampleSite前台概览"></a>SampleSite前台概览</h3><p><img src="articles.jpg" alt="首页（文章列表页）"></p>
+<p><img src="about.jpg" alt="关于我们页面"></p>
+<p><img src="detail.jpg" alt="文章详细页"></p>
+<p><img src="login.jpg" alt="登录页"></p>
+<p><img src="register.jpg" alt="注册页"></p>
+<p><img src="forget-password.jpg" alt="取回密码页"></p>
+<h3 id="SampleSite后台概览"><a href="#SampleSite后台概览" class="headerlink" title="SampleSite后台概览"></a>SampleSite后台概览</h3>
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://www.kooboo.me/2016/12-31/sample-site/" data-id="cixd7nbfq0004gkld9zru06dw" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/2016/12-10/getting-started/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">入门指南</span>
+    </a>
+  </li>
+  
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+      
+    </div>
+  </div>
+    
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      copyright &copy; 2017 风情波涌
+      <a href="http://www.miibeian.gov.cn/" target="_blank">闽ICP备16035825号</a>
+      <br/>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/unslider/2.0.3/js/unslider-min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>切换数据存储方式 | Kooboo CMS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="切换数据存储方式包括以下几种：
+
+将文本内容存储在SqlServer、MySQL、MongoDB等数据库中
+将站点配置信息存储在数据库中
+将后台用户信息存储在数据库中
+将会员信息存储在数据库中
+将图片、视频等媒体资源存储在网站目录以外的地方
+
+切换内容数据库
+
+Kooboo CMS默认文本数据使用XML文件存储的方式，媒体资源使用文件夹存储的方式，在多数据情况下，我们建议开发人员在开发时使用默认的">
+<meta property="og:type" content="website">
+<meta property="og:title" content="切换数据存储方式">
+<meta property="og:url" content="http://www.kooboo.me/docs/switch-repositories/index.html">
+<meta property="og:site_name" content="Kooboo CMS">
+<meta property="og:description" content="切换数据存储方式包括以下几种：
+
+将文本内容存储在SqlServer、MySQL、MongoDB等数据库中
+将站点配置信息存储在数据库中
+将后台用户信息存储在数据库中
+将会员信息存储在数据库中
+将图片、视频等媒体资源存储在网站目录以外的地方
+
+切换内容数据库
+
+Kooboo CMS默认文本数据使用XML文件存储的方式，媒体资源使用文件夹存储的方式，在多数据情况下，我们建议开发人员在开发时使用默认的">
+<meta property="og:updated_time" content="2017-01-01T11:39:30.732Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="切换数据存储方式">
+<meta name="twitter:description" content="切换数据存储方式包括以下几种：
+
+将文本内容存储在SqlServer、MySQL、MongoDB等数据库中
+将站点配置信息存储在数据库中
+将后台用户信息存储在数据库中
+将会员信息存储在数据库中
+将图片、视频等媒体资源存储在网站目录以外的地方
+
+切换内容数据库
+
+Kooboo CMS默认文本数据使用XML文件存储的方式，媒体资源使用文件夹存储的方式，在多数据情况下，我们建议开发人员在开发时使用默认的">
+  
+    <link rel="alternate" href="/atom.xml" title="Kooboo CMS" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="http://fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/unslider/2.0.3/css/unslider.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?19a46999a8663e78e0474eecce13524b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="logo" href="/">
+        <img src="/images/logo.png" />
+      </a>
+      
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/docs/" class="active">技术文档</a></li>
+        <li><a href="/archives/">文章中心</a></li>
+        <li><a href="/extensions/">CMS拓展</a></li>
+        <li><a href="/downloads/">下载中心</a></li>
+        <li><a href="/about/">关于我们</a></li>
+        <li><a href="https://github.com/Tsingbo-Kooboo/KoobooMvc5" target="_blank">获取源码</a></li>
+        </ul>
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+    
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">Kooboo CMS</h1>
+  
+</div>
+
+    <div class="row">
+      
+        <div class="col-sm-12 blog-main">
+          <article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      切换数据存储方式
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/docs/switch-repositories/index.html" class="article-date"><time datetime="2016-12-31T12:58:10.000Z" itemprop="datePublished">2016-12-31</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>切换数据存储方式包括以下几种：</p>
+<ul>
+<li>将文本内容存储在SqlServer、MySQL、MongoDB等数据库中</li>
+<li>将站点配置信息存储在数据库中</li>
+<li>将后台用户信息存储在数据库中</li>
+<li>将会员信息存储在数据库中</li>
+<li><p>将图片、视频等媒体资源存储在网站目录以外的地方</p>
+</li>
+<li><h2 id="切换内容数据库"><a href="#切换内容数据库" class="headerlink" title="切换内容数据库"></a>切换内容数据库</h2></li>
+</ul>
+<p>Kooboo CMS默认文本数据使用XML文件存储的方式，媒体资源使用文件夹存储的方式，在多数据情况下，我们建议开发人员在开发时使用默认的存储方式，等到部署时再整站点导入到生产环境。</p>
+<ul>
+<li><h3 id="切换文本内容（TextContent）的存储方式"><a href="#切换文本内容（TextContent）的存储方式" class="headerlink" title="切换文本内容（TextContent）的存储方式"></a>切换文本内容（TextContent）的存储方式</h3></li>
+</ul>
+<p>Kooboo CMS默认将文本内容以XML的形式存储，这里以存储到SqlServer为例简要描述步骤：</p>
+<ol>
+<li>导出已经创建好的站点。</li>
+<li>从<a href="https://github.com/Tsingbo-Kooboo/KoobooMvc5/releases/latest" target="_blank" rel="external">这里</a>下载“Content_Providers.zip”并解压，找到里面的SQLServer子目录。</li>
+<li>将SQLServer目录中的所有文件（Kooboo.CMS.Content.Persistence.SQLServer.dll与SqlServer.config）拷贝到Kooboo CMS的Bin目录中。</li>
+<li>修改相应的连接串配置文件（SqlServer.config）。</li>
+<li>重新创建或导入站点。</li>
+</ol>
+<p>其它几种数据存储（站点配置信息、后台用户信息、会员信息）的切换方式都类似，就不一一详谈。</p>
+<ul>
+<li><h3 id="切换媒体内容（MediaContent）的存储方式"><a href="#切换媒体内容（MediaContent）的存储方式" class="headerlink" title="切换媒体内容（MediaContent）的存储方式"></a>切换媒体内容（MediaContent）的存储方式</h3></li>
+</ul>
+<p>Kooboo CMS默认将媒体资源存储在站点内容目录下（位于/Cms_Data/Contents/{RepositoryName}/Media下），同时Kooboo CMS也支持将媒体资源存储在Azure blob storage或者自建的文件系统中。存储在Azure blob storage的切换方式与文本内容的切换方式类似，就不重复描述。</p>
+<p>以下简要说说自建文件系统的搭建方法：</p>
+<ol>
+<li>从<a href="https://github.com/Tsingbo-Kooboo/KoobooMvc5/releases/latest" target="_blank" rel="external">这里</a>下载“FileServer_Web.zip”并解压。</li>
+<li>在IIS中新建一个站点（以下称之为“资源站”）并指向上一步解压的目录。</li>
+<li><p>修改资源站中web.config里面appSettings中的几个值：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">AccountName:账号名，可以设置自己喜欢的用户名，该用户名与CMS中的用户名没有关系。</div><div class="line">AccountKey:密码，可以设置自己喜欢的密码。</div><div class="line">BaseUri:域名地址，媒体资源的url会与此有关，请确保该地址的准确性，也可放空。</div></pre></td></tr></table></figure>
+</li>
+<li><p>从“Content_Providers.zip”解压的目录里面找到FileServerProvider子目录，并把里面的所有文件拷贝到Kooboo CMS的Bin目录中。</p>
+</li>
+<li>修改配置文件（FileServerProviderSettings.config）中的几个值：<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">AccountName:账号名，需要与“资源站”的web.config中的值一样。</div><div class="line">AccountKey:密码，需要与“资源站”的web.config中的值一样。</div><div class="line">Endpoint:域名地址，填写“资源站”所在的URL地址。</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><h3 id="切换数据库常见的问题"><a href="#切换数据库常见的问题" class="headerlink" title="切换数据库常见的问题"></a>切换数据库常见的问题</h3></li>
+</ul>
+<ol>
+<li><p>数据丢失<br>切换为无结构的数据库（MongoDB、CouchBase）后，如果站点没有重新导入，站点运行不会出错，但是内容数据将会丢失。</p>
+</li>
+<li><p>提示Invalid object name<br>切换为有结构数据库（SQLServer,SQLCe,MySQL）后，如果站点没有重新导入，在运行时会出现找不到数据表的错误。因为有结构数据库，需要重新导入站点来重建数据表和导入数据。</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://www.kooboo.me/docs/switch-repositories/index.html" data-id="cixel2pgt000ts4ldm6lt9ary" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+    
+
+  
+</article>
+
+
+
+
+        </div>
+      
+    </div>
+  </div>
+    
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      copyright &copy; 2017 风情波涌
+      <a href="http://www.miibeian.gov.cn/" target="_blank">闽ICP备16035825号</a>
+      <br/>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/unslider/2.0.3/js/unslider-min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>入门指南 | Kooboo CMS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="程序下载你可以从github网站签出最新Kooboo CMS源码自行发布，或者从这里下载发布后的压缩包“Kooboo_CMS.zip”。解压压缩包以备用。
+下载地址：downloads
+
+搭建Kooboo CMS环境搭建用作项目开发的环境为了便于开发，这里推荐使用VisualStudio（以下简称VS）作为开发工具。使用VS打开解压后的文件夹里面的Kooboo_CMS.csproj项目。
+直接点击">
+<meta property="og:type" content="article">
+<meta property="og:title" content="入门指南">
+<meta property="og:url" content="http://www.kooboo.me/2016/12-10/getting-started/index.html">
+<meta property="og:site_name" content="Kooboo CMS">
+<meta property="og:description" content="程序下载你可以从github网站签出最新Kooboo CMS源码自行发布，或者从这里下载发布后的压缩包“Kooboo_CMS.zip”。解压压缩包以备用。
+下载地址：downloads
+
+搭建Kooboo CMS环境搭建用作项目开发的环境为了便于开发，这里推荐使用VisualStudio（以下简称VS）作为开发工具。使用VS打开解压后的文件夹里面的Kooboo_CMS.csproj项目。
+直接点击">
+<meta property="og:image" content="http://www.kooboo.me/download-and-unzip-kooboo-cms.jpg">
+<meta property="og:image" content="http://www.kooboo.me/open-project-with-visual-studio.jpg">
+<meta property="og:image" content="http://www.kooboo.me/folder-structure.jpg">
+<meta property="og:image" content="http://www.kooboo.me/open-package-manager.jpg">
+<meta property="og:image" content="http://www.kooboo.me/install-package-kooboo-core.jpg">
+<meta property="og:image" content="http://www.kooboo.me/install-package-kooboo-core-with-command-line.jpg">
+<meta property="og:updated_time" content="2016-12-31T12:52:16.213Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="入门指南">
+<meta name="twitter:description" content="程序下载你可以从github网站签出最新Kooboo CMS源码自行发布，或者从这里下载发布后的压缩包“Kooboo_CMS.zip”。解压压缩包以备用。
+下载地址：downloads
+
+搭建Kooboo CMS环境搭建用作项目开发的环境为了便于开发，这里推荐使用VisualStudio（以下简称VS）作为开发工具。使用VS打开解压后的文件夹里面的Kooboo_CMS.csproj项目。
+直接点击">
+<meta name="twitter:image" content="http://www.kooboo.me/download-and-unzip-kooboo-cms.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Kooboo CMS" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="http://fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/unslider/2.0.3/css/unslider.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?19a46999a8663e78e0474eecce13524b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="logo" href="/">
+        <img src="/images/logo.png" />
+      </a>
+      
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/docs/">技术文档</a></li>
+        <li><a href="/archives/">文章中心</a></li>
+        <li><a href="/extensions/">CMS拓展</a></li>
+        <li><a href="/downloads/">下载中心</a></li>
+        <li><a href="/about/">关于我们</a></li>
+        <li><a href="https://github.com/Tsingbo-Kooboo/KoobooMvc5" target="_blank">获取源码</a></li>
+        </ul>
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+    
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">Kooboo CMS</h1>
+  
+</div>
+
+    <div class="row">
+      
+        <div class="col-sm-12 blog-main">
+          <article id="post-getting-started" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      入门指南
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/2016/12-10/getting-started/" class="article-date"><time datetime="2016-12-10T11:10:49.000Z" itemprop="datePublished">2016-12-10</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="程序下载"><a href="#程序下载" class="headerlink" title="程序下载"></a>程序下载</h2><p>你可以从<a href="https://github.com/Tsingbo-Kooboo/KoobooMvc5" target="_blank" rel="external">github网站</a>签出最新Kooboo CMS源码自行发布，或者从<a href="/downloads/Kooboo_CMS.zip">这里</a>下载发布后的压缩包“Kooboo_CMS.zip”。解压压缩包以备用。</p>
+<p>下载地址：<a href="/downloads/">downloads</a></p>
+<p><img src="download-and-unzip-kooboo-cms.jpg" alt="下载并解压Kooboo_CMS.zip"></p>
+<h2 id="搭建Kooboo-CMS环境"><a href="#搭建Kooboo-CMS环境" class="headerlink" title="搭建Kooboo CMS环境"></a>搭建Kooboo CMS环境</h2><h3 id="搭建用作项目开发的环境"><a href="#搭建用作项目开发的环境" class="headerlink" title="搭建用作项目开发的环境"></a>搭建用作项目开发的环境</h3><p>为了便于开发，这里推荐使用VisualStudio（以下简称VS）作为开发工具。使用VS打开解压后的文件夹里面的Kooboo_CMS.csproj项目。<br><img src="open-project-with-visual-studio.jpg" alt="用VisualStudio打开Kooboo_CMS.csproj项目"></p>
+<p>直接点击“保存全部”（快捷键Ctrl+Shift+S）将解决方案文件保存到与解压后的Kooboo_CMS文件夹同目录。</p>
+<h4 id="整理下文件："><a href="#整理下文件：" class="headerlink" title="整理下文件："></a>整理下文件：</h4><p>1.删除无用的文件（Kooboo_CMS.zip、manifest.xml、parameters.xml）。<br>2.拷贝Bin目录到sln文件同级并重命名为lib。<br>3.删除lib文件夹中所有以Kooboo开头跟System.Web开头的dll。<br><img src="folder-structure.jpg" alt="整理目录结构"></p>
+<h4 id="从nuget安装Kooboo-Core（Kooboo-CMS-Core-Binaries）包"><a href="#从nuget安装Kooboo-Core（Kooboo-CMS-Core-Binaries）包" class="headerlink" title="从nuget安装Kooboo.Core（Kooboo CMS Core Binaries）包"></a>从nuget安装Kooboo.Core（Kooboo CMS Core Binaries）包</h4><p>从<a href="http://www.nuget.org/packages/Kooboo.Core/" target="_blank" rel="external">nuget</a>下载Kooboo.Core包，或者打开“Package Manager Console”键入 “Install-Package Kooboo.Core”进行安装。</p>
+<p><img src="open-package-manager.jpg" alt="打开包管理器"></p>
+<h3 id="以下两种方式二选一即可。"><a href="#以下两种方式二选一即可。" class="headerlink" title="以下两种方式二选一即可。"></a>以下两种方式二选一即可。</h3><p><img src="install-package-kooboo-core.jpg" alt="使用可视化的方式(&quot;Manage NuGet Packages for Solution...&quot;选项)安装Kooboo.Core"><br><img src="install-package-kooboo-core-with-command-line.jpg" alt="使用命令行(&quot;Package Manager Control...&quot;选项)安装Kooboo.Core"><br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">PM&gt; Install-Package Kooboo.Core</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://www.kooboo.me/2016/12-10/getting-started/" data-id="cixd7nbfi0002gklddbj4fuv2" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  
+  <li role="presentation">
+    <a href="/2016/12-31/sample-site/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">初识SampleSite</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+
+
+        </div>
+      
+    </div>
+  </div>
+    
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      copyright &copy; 2017 风情波涌
+      <a href="http://www.miibeian.gov.cn/" target="_blank">闽ICP备16035825号</a>
+      <br/>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/unslider/2.0.3/js/unslider-min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>
