@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>站点配置管理 | Kooboo CMS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="站点关系
+
+管理站点间的关系，站点可以有子站点，子站点继承父站点的部分配置数据，同时子站点还可以根据需要，本地化由父站点继承而来的数据。通过继承和本地化，可以让子站点在用最小的改动代价，来完成一个与父站点功能类似，但有部分不同的网站。在创建子站点时，可以选择使用与Kooboo CMS中任何已经存在的站点的相同的内容数据库，也可以选择新建一个新的内容数据库。如果选择新建内容数据库时，新的内容数据库">
+<meta property="og:type" content="website">
+<meta property="og:title" content="站点配置管理">
+<meta property="og:url" content="http://www.kooboo.me/docs/site-setting-manager/index.html">
+<meta property="og:site_name" content="Kooboo CMS">
+<meta property="og:description" content="站点关系
+
+管理站点间的关系，站点可以有子站点，子站点继承父站点的部分配置数据，同时子站点还可以根据需要，本地化由父站点继承而来的数据。通过继承和本地化，可以让子站点在用最小的改动代价，来完成一个与父站点功能类似，但有部分不同的网站。在创建子站点时，可以选择使用与Kooboo CMS中任何已经存在的站点的相同的内容数据库，也可以选择新建一个新的内容数据库。如果选择新建内容数据库时，新的内容数据库">
+<meta property="og:image" content="http://www.kooboo.me/site-setting-basic.jpg">
+<meta property="og:image" content="http://www.kooboo.me/site-setting-domain.jpg">
+<meta property="og:image" content="http://www.kooboo.me/site-setting-web-resource.jpg">
+<meta property="og:image" content="http://www.kooboo.me/site-setting-smtp.jpg">
+<meta property="og:image" content="http://www.kooboo.me/site-setting-html-meta.jpg">
+<meta property="og:updated_time" content="2017-01-02T08:22:55.596Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="站点配置管理">
+<meta name="twitter:description" content="站点关系
+
+管理站点间的关系，站点可以有子站点，子站点继承父站点的部分配置数据，同时子站点还可以根据需要，本地化由父站点继承而来的数据。通过继承和本地化，可以让子站点在用最小的改动代价，来完成一个与父站点功能类似，但有部分不同的网站。在创建子站点时，可以选择使用与Kooboo CMS中任何已经存在的站点的相同的内容数据库，也可以选择新建一个新的内容数据库。如果选择新建内容数据库时，新的内容数据库">
+<meta name="twitter:image" content="http://www.kooboo.me/site-setting-basic.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Kooboo CMS" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="http://fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/unslider/2.0.3/css/unslider.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?19a46999a8663e78e0474eecce13524b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="logo" href="/">
+        <img src="/images/logo.png" />
+      </a>
+      
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/docs/" class="active">技术文档</a></li>
+        <li><a href="/archives/">文章中心</a></li>
+        <li><a href="/extensions/">CMS拓展</a></li>
+        <li><a href="/downloads/">下载中心</a></li>
+        <li><a href="/about/">关于我们</a></li>
+        <li><a href="https://github.com/Tsingbo-Kooboo/KoobooMvc5" target="_blank">获取源码</a></li>
+        </ul>
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+    
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">Kooboo CMS</h1>
+  
+</div>
+
+    <div class="row">
+      
+        <div class="col-sm-12 blog-main">
+          <article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      站点配置管理
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/docs/site-setting-manager/index.html" class="article-date"><time datetime="2017-01-02T07:49:22.000Z" itemprop="datePublished">2017-01-02</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><h2 id="站点关系"><a href="#站点关系" class="headerlink" title="站点关系"></a>站点关系</h2></li>
+</ul>
+<p>管理站点间的关系，站点可以有子站点，子站点继承父站点的部分配置数据，同时子站点还可以根据需要，本地化由父站点继承而来的数据。通过继承和本地化，可以让子站点在用最小的改动代价，来完成一个与父站点功能类似，但有部分不同的网站。<br>在创建子站点时，可以选择使用与Kooboo CMS中任何已经存在的站点的相同的内容数据库，也可以选择新建一个新的内容数据库。如果选择新建内容数据库时，新的内容数据库会复制父站点使用的内容数据库，但之后他们各种独立，不再有任何关系。</p>
+<ul>
+<li><h2 id="站点配置（Site-setting）"><a href="#站点配置（Site-setting）" class="headerlink" title="站点配置（Site setting）"></a>站点配置（Site setting）</h2></li>
+</ul>
+<p>用于修改站点的配置信息，这些信息可以包括:</p>
+<h3 id="（1）基础设置"><a href="#（1）基础设置" class="headerlink" title="（1）基础设置"></a>（1）基础设置</h3><ul>
+<li>显示名称</li>
+<li>使用的内容数据库</li>
+<li>使用的会员数据库</li>
+<li>站点文化设置</li>
+<li>时区设置</li>
+<li>是否显示站点管理首页的页面结构图开关</li>
+<li>启用版本控制开关</li>
+</ul>
+<p><img src="site-setting-basic.jpg" alt="基础设置"></p>
+<h3 id="（2）域名设置"><a href="#（2）域名设置" class="headerlink" title="（2）域名设置"></a>（2）域名设置</h3><ul>
+<li>域名</li>
+<li>站点虚拟目录</li>
+<li>使用的设备</li>
+<li>SSL反向代理HTTP Header设置</li>
+</ul>
+<p><img src="site-setting-domain.jpg" alt="域名设置"></p>
+<h3 id="（3）站点资源设置"><a href="#（3）站点资源设置" class="headerlink" title="（3）站点资源设置"></a>（3）站点资源设置</h3><ul>
+<li>站点皮肤设置</li>
+<li>站点版本设置</li>
+<li>站点运行模式设置</li>
+<li>在线编辑开关</li>
+<li>引用JQuery开关</li>
+</ul>
+<p><img src="site-setting-web-resource.jpg" alt="站点资源设置"></p>
+<h3 id="（4）SMTP设置"><a href="#（4）SMTP设置" class="headerlink" title="（4）SMTP设置"></a>（4）SMTP设置</h3><ul>
+<li>SMTP账号相关设置</li>
+</ul>
+<p><img src="site-setting-smtp.jpg" alt="SMTP设置"></p>
+<h3 id="（5）HTML-META"><a href="#（5）HTML-META" class="headerlink" title="（5）HTML META"></a>（5）HTML META</h3><ul>
+<li>HTML标题</li>
+<li>Canonical</li>
+<li>作者</li>
+<li>关键字</li>
+<li>描述</li>
+<li>Meta块</li>
+<li>定义Meta字段</li>
+</ul>
+<p><img src="site-setting-html-meta.jpg" alt="HTML Meta设置"></p>
+<h3 id="（6）安全设置"><a href="#（6）安全设置" class="headerlink" title="（6）安全设置"></a>（6）安全设置</h3><ul>
+<li>密钥</li>
+</ul>
+<h3 id="（7）自定义字段"><a href="#（7）自定义字段" class="headerlink" title="（7）自定义字段"></a>（7）自定义字段</h3><ul>
+<li>开发者自定义字段</li>
+<li>自定义设置</li>
+<li>站点用户管理</li>
+<li>URL地址重定向</li>
+<li>Robots.txt</li>
+</ul>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://www.kooboo.me/docs/site-setting-manager/index.html" data-id="cixfsbdrx000uagldm6fir1x5" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+    
+
+  
+</article>
+
+
+
+
+        </div>
+      
+    </div>
+  </div>
+    
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      copyright &copy; 2017 风情波涌
+      <a href="http://www.miibeian.gov.cn/" target="_blank">闽ICP备16035825号</a>
+      <br/>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/unslider/2.0.3/js/unslider-min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>

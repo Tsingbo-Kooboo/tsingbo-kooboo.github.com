@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Kooboo CMS的站点组成部分 | Kooboo CMS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Kooboo CMS本着功能独立分离的原则，将站点分为三部分组成：用户管理，站点管理和内容数据库管理。各个功能之间既可独立使用，也可以容易组成在一起形成一个完整的系统。
+
+用户管理
+
+管理整个系统内的用户和角色权限定义。管理员在通过用户管理模块管理用户的相关信息，包括：用户名，密码，Email，是否为超级管理员，界面语言。其中，是否为管理员设置是标识该用户是否为系统的超级管理，如果用户为超级管理员">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kooboo CMS的站点组成部分">
+<meta property="og:url" content="http://www.kooboo.me/docs/site-construction/index.html">
+<meta property="og:site_name" content="Kooboo CMS">
+<meta property="og:description" content="Kooboo CMS本着功能独立分离的原则，将站点分为三部分组成：用户管理，站点管理和内容数据库管理。各个功能之间既可独立使用，也可以容易组成在一起形成一个完整的系统。
+
+用户管理
+
+管理整个系统内的用户和角色权限定义。管理员在通过用户管理模块管理用户的相关信息，包括：用户名，密码，Email，是否为超级管理员，界面语言。其中，是否为管理员设置是标识该用户是否为系统的超级管理，如果用户为超级管理员">
+<meta property="og:updated_time" content="2017-01-02T07:46:28.134Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kooboo CMS的站点组成部分">
+<meta name="twitter:description" content="Kooboo CMS本着功能独立分离的原则，将站点分为三部分组成：用户管理，站点管理和内容数据库管理。各个功能之间既可独立使用，也可以容易组成在一起形成一个完整的系统。
+
+用户管理
+
+管理整个系统内的用户和角色权限定义。管理员在通过用户管理模块管理用户的相关信息，包括：用户名，密码，Email，是否为超级管理员，界面语言。其中，是否为管理员设置是标识该用户是否为系统的超级管理，如果用户为超级管理员">
+  
+    <link rel="alternate" href="/atom.xml" title="Kooboo CMS" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="http://fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/unslider/2.0.3/css/unslider.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?19a46999a8663e78e0474eecce13524b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="logo" href="/">
+        <img src="/images/logo.png" />
+      </a>
+      
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/docs/" class="active">技术文档</a></li>
+        <li><a href="/archives/">文章中心</a></li>
+        <li><a href="/extensions/">CMS拓展</a></li>
+        <li><a href="/downloads/">下载中心</a></li>
+        <li><a href="/about/">关于我们</a></li>
+        <li><a href="https://github.com/Tsingbo-Kooboo/KoobooMvc5" target="_blank">获取源码</a></li>
+        </ul>
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+    
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">Kooboo CMS</h1>
+  
+</div>
+
+    <div class="row">
+      
+        <div class="col-sm-12 blog-main">
+          <article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      Kooboo CMS的站点组成部分
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/docs/site-construction/index.html" class="article-date"><time datetime="2017-01-02T07:38:22.000Z" itemprop="datePublished">2017-01-02</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Kooboo CMS本着功能独立分离的原则，将站点分为三部分组成：用户管理，站点管理和内容数据库管理。各个功能之间既可独立使用，也可以容易组成在一起形成一个完整的系统。</p>
+<ul>
+<li><h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2></li>
+</ul>
+<p>管理整个系统内的用户和角色权限定义。管理员在通过用户管理模块管理用户的相关信息，包括：用户名，密码，Email，是否为超级管理员，界面语言。其中，是否为管理员设置是标识该用户是否为系统的超级管理，如果用户为超级管理员则不需受角色限制而拥有系统有所有权限；界面语言设置可用于设置用户的后面管理界面的显示语言。角色管理用于定义角色所能操作的功能。用户与角色的关系，不在用户管理模块中设置。它们的关系是通过站点添加用户时选择的角色来确定，也就是一个用户在不同站点下可能会有不会的角色权限。</p>
+<ul>
+<li><h2 id="站点管理"><a href="#站点管理" class="headerlink" title="站点管理"></a>站点管理</h2></li>
+</ul>
+<p>站点管理是维护与站点相关的配置信息，包括：站点关系，站点配置，用户添加，自定义错误，URL重定向，robots.txt管理，Layout管理，View管理，Html代码块管理，Label管理，脚本管理，皮肤管理，文件管理，页面地址映射，扩展管理，Module管理，页面管理。</p>
+<ul>
+<li><h2 id="内容数据库管理"><a href="#内容数据库管理" class="headerlink" title="内容数据库管理"></a>内容数据库管理</h2></li>
+</ul>
+<p>内容数据库是用于存储网站的动态数据内容，由内容结构定义，工作流定义，内容广播定义，内容维护等功能组成。<br>注意：<strong>一个内容数据库可以被多个站点同时共享使用。</strong></p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://www.kooboo.me/docs/site-construction/index.html" data-id="cixfrz6vd000tagldrdo210xh" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+    
+
+  
+</article>
+
+
+
+
+        </div>
+      
+    </div>
+  </div>
+    
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      copyright &copy; 2017 风情波涌
+      <a href="http://www.miibeian.gov.cn/" target="_blank">闽ICP备16035825号</a>
+      <br/>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/unslider/2.0.3/js/unslider-min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>
