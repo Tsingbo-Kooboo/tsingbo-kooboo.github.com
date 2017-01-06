@@ -20,7 +20,21 @@
 <meta property="og:image" content="http://www.kooboo.me/site-setting-web-resource.jpg">
 <meta property="og:image" content="http://www.kooboo.me/site-setting-smtp.jpg">
 <meta property="og:image" content="http://www.kooboo.me/site-setting-html-meta.jpg">
-<meta property="og:updated_time" content="2017-01-04T13:24:00.883Z">
+<meta property="og:image" content="http://www.kooboo.me/site-setting-security.jpg">
+<meta property="og:image" content="http://www.kooboo.me/site-setting-custom-fields.jpg">
+<meta property="og:image" content="http://www.kooboo.me/site-setting-site-users.jpg">
+<meta property="og:image" content="http://www.kooboo.me/site-setting-url-redirect.jpg">
+<meta property="og:image" content="http://www.kooboo.me/site-setting-robots.jpg">
+<meta property="og:image" content="http://www.kooboo.me/site-setting-ab-rules.jpg">
+<meta property="og:image" content="http://www.kooboo.me/site-setting-create-rule.jpg">
+<meta property="og:image" content="http://www.kooboo.me/site-setting-ab-rule-item.jpg">
+<meta property="og:image" content="http://www.kooboo.me/site-setting-ab-rule-item-save.jpg">
+<meta property="og:image" content="http://www.kooboo.me/create-a-b-page.jpg">
+<meta property="og:image" content="http://www.kooboo.me/site-setting-ab-page-settings.jpg">
+<meta property="og:image" content="http://www.kooboo.me/page-rule-setting.jpg">
+<meta property="og:image" content="http://www.kooboo.me/a-page-in-pc.jpg">
+<meta property="og:image" content="http://www.kooboo.me/a-page-in-mobile.jpg">
+<meta property="og:updated_time" content="2017-01-06T13:04:57.769Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="站点配置管理">
 <meta name="twitter:description" content="站点关系
@@ -207,19 +221,52 @@ var _hmt = _hmt || [];
 <li>Meta块</li>
 <li>定义Meta字段</li>
 </ul>
-<h3 id="（6）安全设置"><a href="#（6）安全设置" class="headerlink" title="（6）安全设置"></a>（6）安全设置</h3><ul>
+<h3 id="（6）安全设置"><a href="#（6）安全设置" class="headerlink" title="（6）安全设置"></a>（6）安全设置</h3><p><img src="site-setting-security.jpg" alt="安全设置"></p>
+<ul>
 <li>密钥<br>用于站点数据加密/解密的密钥。</li>
 </ul>
-<h3 id="（7）自定义字段"><a href="#（7）自定义字段" class="headerlink" title="（7）自定义字段"></a>（7）自定义字段</h3><ul>
+<h3 id="（7）自定义字段"><a href="#（7）自定义字段" class="headerlink" title="（7）自定义字段"></a>（7）自定义字段</h3><p><img src="site-setting-custom-fields.jpg" alt="自定义字段"></p>
+<ul>
 <li>开发者自定义字段<br>开发者自己定义的一些信息，比如需要调用第三方API时，可以把API信息配置到这里，使用@Site.Current.CustomFields[“key”]来取数据。</li>
 </ul>
-<h3 id="（8）站点用户管理"><a href="#（8）站点用户管理" class="headerlink" title="（8）站点用户管理"></a>（8）站点用户管理</h3><p>除了超级管理员之外，只有被添加到站点内的用户才可以维护站点的数据。添加站点用户是选择一个已经在系统中存在的用户，以一种或多种不同的角色添加到站点，让该用户具有维护站点数据的权限。</p>
-<h3 id="（9）URL地址重定向"><a href="#（9）URL地址重定向" class="headerlink" title="（9）URL地址重定向"></a>（9）URL地址重定向</h3><p>对于某些情况下，开发人员需要将一个旧的URL请求重定向到一个新的页面地址，此时可能需要做301或302重定向。<br>Url地址重定向配置有两种模式：简单模式和正则表达式模式。</p>
+<h3 id="（8）站点用户管理"><a href="#（8）站点用户管理" class="headerlink" title="（8）站点用户管理"></a>（8）站点用户管理</h3><p><img src="site-setting-site-users.jpg" alt="站点用户管理"></p>
+<p>除了超级管理员之外，只有被添加到站点内的用户才可以维护站点的数据。添加站点用户是选择一个已经在系统中存在的用户，以一种或多种不同的角色添加到站点，让该用户具有维护站点数据的权限。</p>
+<h3 id="（9）URL地址重定向"><a href="#（9）URL地址重定向" class="headerlink" title="（9）URL地址重定向"></a>（9）URL地址重定向</h3><p><img src="site-setting-url-redirect.jpg" alt="URL地址重定向"></p>
+<p>对于某些情况下，开发人员需要将一个旧的URL请求重定向到一个新的页面地址，此时可能需要做301或302重定向。<br>Url地址重定向配置有两种模式：简单模式和正则表达式模式。</p>
 <ul>
 <li>简单模式：只是简单的设置一个输入地址和输出地址，配置成功后重定向到新的地址，如：输入/Home，输出/Articles。</li>
 <li>正则表达式模式：正则表达式模式匹配允许开发人员将输入地址中的部分值替换为新地址的模式串形成一个新的输出地址，如：输入模式串 product/(\d+)，输出模式串Articles/$1。</li>
 </ul>
-<h3 id="（10）robots-txt"><a href="#（10）robots-txt" class="headerlink" title="（10）robots.txt"></a>（10）robots.txt</h3><p>每个站点都可以有自己的Robots.txt，不会相互影响。</p>
+<h3 id="（10）robots-txt"><a href="#（10）robots-txt" class="headerlink" title="（10）robots.txt"></a>（10）robots.txt</h3><p><img src="site-setting-robots.jpg" alt="robots.txt"></p>
+<p>每个站点都可以有自己的Robots.txt，不会相互影响。</p>
+<h3 id="（11）-A-B测试"><a href="#（11）-A-B测试" class="headerlink" title="（11） A/B测试"></a>（11） A/B测试</h3><p><img src="site-setting-ab-rules.jpg" alt="A/B规则"></p>
+<p>A/B测试用于配置一些规则实现基于某些特定条件展现不同页面。支持规则类型包括</p>
+<ul>
+<li>浏览器语言</li>
+<li>随机访问</li>
+<li>用户IP</li>
+<li>URL的querystring</li>
+<li>浏览器UserAgent</li>
+</ul>
+<p>以下举个例子用于简要介绍该功能的用法,假设我们有这样一个需求：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">同一个URL，我们希望移动端（手机）用户访问的是A页面，PC端访问的是B页面。</div></pre></td></tr></table></figure>
+<p>操作步骤如下:</p>
+<ol>
+<li><p>新建个规则，起个名字（比如“mobile”），选择规则类型为“Browser useragent”。点击下一步。<br><img src="site-setting-create-rule.jpg" alt="创建规则"></p>
+</li>
+<li><p>点击加号添加规则项，可以支持多个规则。起个名字（比如“mobile”），正则表达式是用于匹配浏览器UserAgent的，底部有一些常见的规则，可以直接点击使用或者自己编写正则表达式，然后点击“Next”。（本例中点击“Mobiles”项）<br><img src="site-setting-ab-rule-item.jpg" alt="添加规则项"></p>
+</li>
+<li><p>完成规则项编辑。点击“Finish”返回即可。<br><img src="site-setting-ab-rule-item-save.jpg" alt="保存规则项"></p>
+</li>
+<li><p>为了便于测试，我们新建两个页面，名字分别叫 A、B<br><img src="create-a-b-page.jpg" alt="新建测试页面"></p>
+</li>
+<li><p>点击左边菜单列表进入“A/B page settings”并点击“Create”新建页面规则。<br><img src="site-setting-ab-page-settings.jpg" alt="进入A/B页面配置"></p>
+</li>
+<li><p>配置规则页面<br><img src="page-rule-setting.jpg" alt="配置规则页面"></p>
+</li>
+<li><p>测试访问。分别在电脑、手机上访问同一个页面（本例是: 192.168.2.109:8090/a ）<br><img src="a-page-in-pc.jpg" alt="电脑上访问，显示的是页面A"><br><img src="a-page-in-mobile.jpg" alt="手机上访问，显示的是页面B"></p>
+</li>
+</ol>
 
       
     </div>
@@ -230,7 +277,7 @@ var _hmt = _hmt || [];
     
 
     <footer class="article-footer">
-      <a data-url="http://www.kooboo.me/docs/site-setting-manager/index.html" data-id="cixiw10j1000858ldb9kbano3" class="article-share-link">
+      <a data-url="http://www.kooboo.me/docs/site-setting-manager/index.html" data-id="cixlt9j9h0008tcldwefvp35v" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
