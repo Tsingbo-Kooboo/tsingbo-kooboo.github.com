@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>模板开发说明 | Kooboo CMS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="模板包含布局模板和视图模式，这两种模板加上数据查询就可以组成页面。在Kooboo CMS中，支持三种模板语法：
+
+Razor，在ASP.NET MVC3中提供的一种全新的模板引擎，它的最大特点是简洁和流畅。
+WebForm，早期ASP.NET开发的模板引擎。
+NVelocity，开源模板引擎，它的特点是安全性，限制性模板。只允许调用在Kooboo CMS中已开放的接口，不允许开发人员在模板上任意写">
+<meta property="og:type" content="website">
+<meta property="og:title" content="模板开发说明">
+<meta property="og:url" content="http://www.kooboo.me/docs/template-development/index.html">
+<meta property="og:site_name" content="Kooboo CMS">
+<meta property="og:description" content="模板包含布局模板和视图模式，这两种模板加上数据查询就可以组成页面。在Kooboo CMS中，支持三种模板语法：
+
+Razor，在ASP.NET MVC3中提供的一种全新的模板引擎，它的最大特点是简洁和流畅。
+WebForm，早期ASP.NET开发的模板引擎。
+NVelocity，开源模板引擎，它的特点是安全性，限制性模板。只允许调用在Kooboo CMS中已开放的接口，不允许开发人员在模板上任意写">
+<meta property="og:image" content="http://www.kooboo.me/layout-code-helper.jpg">
+<meta property="og:image" content="http://www.kooboo.me/front-file-url.jpg">
+<meta property="og:image" content="http://www.kooboo.me/theme-file-url.jpg">
+<meta property="og:image" content="http://www.kooboo.me/enable-paging.jpg">
+<meta property="og:image" content="http://www.kooboo.me/view-parameter.jpg">
+<meta property="og:image" content="http://www.kooboo.me/define-view-parameter.jpg">
+<meta property="og:image" content="http://www.kooboo.me/add-view-parameter-to-page.jpg">
+<meta property="og:image" content="http://www.kooboo.me/tip.jpg">
+<meta property="og:updated_time" content="2017-01-06T16:29:57.469Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="模板开发说明">
+<meta name="twitter:description" content="模板包含布局模板和视图模式，这两种模板加上数据查询就可以组成页面。在Kooboo CMS中，支持三种模板语法：
+
+Razor，在ASP.NET MVC3中提供的一种全新的模板引擎，它的最大特点是简洁和流畅。
+WebForm，早期ASP.NET开发的模板引擎。
+NVelocity，开源模板引擎，它的特点是安全性，限制性模板。只允许调用在Kooboo CMS中已开放的接口，不允许开发人员在模板上任意写">
+<meta name="twitter:image" content="http://www.kooboo.me/layout-code-helper.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Kooboo CMS" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="https://fonts.proxy.ustclug.org/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/unslider/2.0.3/css/unslider.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?19a46999a8663e78e0474eecce13524b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="logo" href="/">
+        <img src="/images/logo.png" />
+      </a>
+      
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/docs/" class="active">技术文档</a></li>
+        <li><a href="/archives/">文章中心</a></li>
+        <li><a href="/extensions/">CMS拓展</a></li>
+        <li><a href="/downloads/">下载中心</a></li>
+        <li><a href="/about/">关于我们</a></li>
+        <li><a href="https://github.com/Tsingbo-Kooboo/KoobooMvc5" target="_blank">获取源码</a></li>
+        </ul>
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+    
+  <div class="container">
+    <div class="blog-header">
+  <h1 class="blog-title">Kooboo CMS</h1>
+  
+</div>
+
+    <div class="row">
+      
+        <div class="col-sm-12 blog-main">
+          <article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      模板开发说明
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/docs/template-development/index.html" class="article-date"><time datetime="2017-01-06T13:27:22.000Z" itemprop="datePublished">2017-01-06</time></a>
+</div>
+
+    
+    
+
+  </div>
+  <div class="article-inner">
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>模板包含布局模板和视图模式，这两种模板加上数据查询就可以组成页面。在Kooboo CMS中，支持三种模板语法：</p>
+<ul>
+<li>Razor，在ASP.NET MVC3中提供的一种全新的模板引擎，它的最大特点是简洁和流畅。</li>
+<li>WebForm，早期ASP.NET开发的模板引擎。</li>
+<li>NVelocity，开源模板引擎，它的特点是安全性，限制性模板。只允许调用在Kooboo CMS中已开放的接口，不允许开发人员在模板上任意写代码和调用没有被公开的函数。</li>
+</ul>
+<p>在模板中，主要使用类似MVC UrlHelper之类的接口来完成各种操作，接口对象主要有：</p>
+<ul>
+<li>Page_Context.Current，它会返回一个Page_Context对象，这时页面请求上下文环境对象，其作用有点类似于HttpContext.Current。开发人员可以通过这个入口得到各种请求上下文的对象。</li>
+<li>Url.FrontUrl()，这是在UrlHelper对象上的一个扩展方法，返回FrontUrl对象。FrontUrl的接口负责生成各种URL地址。与UrlHelper一样，它只生成URL地址，不带任何HTML标签。</li>
+<li>Html.FrontHtml()，这是在HtmlHelper对象上的一个扩展方法返回FrontHtml对象。FrontHtml对象负责生成和输出各种HTML标签。</li>
+</ul>
+<p>为了方便开发人员使用各种接口，Kooboo CMS在模板的编辑界面的右边提供了相关的辅助代码块。同时，如果想要获得更好的智能代码提示支持，开发人人员可以用Vistual Studio打开Kooboo CMS来编辑模板。<br><img src="layout-code-helper.jpg" alt="辅助代码块"></p>
+<p><strong><em> 特别说明： </em></strong><br>在以下的示例代码中为了更好地高亮显示避免歧义，有时在引号中嵌套引号的情况下会把外层的双引号改成单引号，但实际开发中其实是不需要改成单引号的。例如：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;a href=&apos;@Url.FrontUrl().PageUrl(&quot;Home&quot;)&apos;&gt;首页&lt;/a&gt;</div></pre></td></tr></table></figure></p>
+<p>其实在开发中是可以写成：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;a href=&quot;@Url.FrontUrl().PageUrl(&quot;Home&quot;)&quot;&gt;首页&lt;/a&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="1-布局模板开发"><a href="#1-布局模板开发" class="headerlink" title="1. 布局模板开发"></a>1. 布局模板开发</h2><p>页面的布局结构由布局模板来定义，布局模板包含有HTML页面公共部分的代码，还预留有相应的占位符提供给不同的页面添加不同的内容。可以放到占位符的内容包括：View，Html block，Module，Folder，Html content。</p>
+<p>布局模板包含由HTML代码和相关的接口组成，主要接口有：</p>
+<ul>
+<li>Html.FrontHtml().HtmlTitle()，根据当前页面的Title配置输出title标签。</li>
+<li>Html.FrontHtml().Meta()，根据当前页面的Meta配置输出所有的html meta标签。</li>
+<li>Html.FrontHtml().RegisterStyles()，输出当前站点使用的皮肤样式。</li>
+<li>Html.FrontHtml().RegisterScripts()，输出当前站点所有引用的脚本文件，跟样式请求的行为一样。</li>
+<li>Html.FrontHtml().Position(“main”)，添加一个名为“main”的内容占位符。这个占位符可以在页面中添加不同的内容。</li>
+<li>Html.FrontHtml().RenderView(“Footer”,ViewData)，把名为“Footer”的视图（View）添加到指定位置。</li>
+</ul>
+<h2 id="2-视图模板开发"><a href="#2-视图模板开发" class="headerlink" title="2. 视图模板开发"></a>2. 视图模板开发</h2><p>视图模板承担着组合HTML和内容数据的责任，开发人员查询数据，通过模板语法组合输出完整HTML内容。除了需要使用不同模板引擎的语法。</p>
+<p>在视图模板开发时还会经常用到下面的接口：</p>
+<ul>
+<li><p>Url.FrontUrl().PageUrl，生成页面URL地址，需要的页面参数使用匿名对象。页面分隔符可以是 “/” 或者 “~”。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">'@Url.FrontUrl().PageUrl("Home")'</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">'@Url.FrontUrl().PageUrl("About")'</span> <span class="attr">title</span>=<span class="string">"关于Kooboo CMS"</span>&gt;</span>关于我们<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">'@Url.FrontUrl().PageUrl("Articles/Detail",new&#123;UserKey="sample-user-key-1"&#125;)'</span>&gt;</span>文章详情1<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">'@Url.FrontUrl().PageUrl("Articles~Detail",new&#123;UserKey="sample-user-key-2"&#125;)'</span> <span class="attr">title</span>=<span class="string">"文章详情2"</span>&gt;</span>文章详情2<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>Url.FrontHtml().PageLink，生成页面链接。以下代码最终生成的与上述写法一样。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>@Html.FrontHtml().PageLink("首页","Home")<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>@Html.FrontHtml().PageLink("关于我们","About",null,new&#123;title="关于Kooboo CMS"&#125;)<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>@Html.FrontHtml().PageLink("文章详情1","Articles/Detail",new&#123;UserKey="sample-user-key-1"&#125;)<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>@Html.FrontHtml().PageLink("文章详情2","Articles~Detail",new&#123;UserKey="sample-user-key-2"&#125;,new&#123;title="文章详情2"&#125;)<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>Url.FrontUrl().FileUrl，生成站点下文件的URL地址。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!--假设SampleSite中，站点配置中设置了cdn地址是cdn.kooboo.com--&gt;</span></div><div class="line"><span class="comment">&lt;!--源码--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">'/'</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">'@Url.FrontUrl().FileUrl("logo.png")'</span> /&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">'/'</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">'@Url.FrontUrl().FileUrl("logo.png",true)'</span> /&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="comment">&lt;!--生成结果--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">'/'</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">'/Cms_Data/Sites/SampleSite/Files/logo.png'</span> /&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">'/'</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">'http://cdn.kooboo.com/Cms_Data/Sites/SampleSite/Files/logo.png'</span> /&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="front-file-url.jpg" alt="文件的URL地址"></p>
+<ul>
+<li>Url.FrontUrl().ThemeFileUrl(“images/header-bg.png”)，生成当前站点使用皮肤目录下的文件URL地址。<br><img src="theme-file-url.jpg" alt="皮肤目录下的文件"></li>
+<li>Url.FrontUrl().ResizeImageUrl(imagePath, width, height)，生成要缩放的图片请求地址。相应的生成链接的接口是：Html.FrontHtml().ResizeImage(imagePath, width, height)</li>
+<li>Html.FrontHtml().Pager(ViewBag.Articles)，生成分页HTML。要支持页，ViewBag.Articles的数据查询必须配置好分页设置选项。<br><img src="enable-paging.jpg" alt="Data Rule中启用分页"></li>
+</ul>
+<h2 id="3-辅助代码（Code-helper）"><a href="#3-辅助代码（Code-helper）" class="headerlink" title="3. 辅助代码（Code helper）"></a>3. 辅助代码（Code helper）</h2><p>视图模板可以配置数据查询（Data rule），配置的数据结果都会存在ViewData中，开发人可以通过ViewData[“DataName”]或者ViewBag.DataName得到查询结果对象。视图模板中查询的数据，只允许本视图模板使用，不共享给其它视图。<br>视图模板可以有参数配置，这些参数可以在页面使用时设置参数值。在代码中使用参数值的方法是：Page_Context.Current[“parameter1”]。<br><img src="view-parameter.jpg" alt="给视图“View”添加参数"></p>
+<h3 id="Code-helper"><a href="#Code-helper" class="headerlink" title="Code helper:"></a>Code helper:</h3><ul>
+<li><h4 id="Label"><a href="#Label" class="headerlink" title="Label:"></a>Label:</h4><p>标签，Kooboo实现多语言以及在线编辑的一个方案，将简单的可修改的文本变成Label可以很方便进行管理。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 辅助代码： --&gt;</span></div><div class="line">@("Label Text".Label())</div><div class="line"><span class="comment">&lt;!-- 举例 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/"</span>&gt;</span>@("Home".Label())<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">li</span>/&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/about"</span>&gt;</span>@("About".Label())<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">li</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"><span class="comment">&lt;!-- 额外说明 --&gt;</span></div><div class="line">加了Label()后的文本在登录后台的前提下访问前台页面可以实现在线编辑。</div><div class="line">除了Label()外，Kooboo CMS还提供了一个用于属性中的标签“RawLabel”。例如：</div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/about"</span> <span class="attr">title</span>=<span class="string">'@("About us".RawLabel())'</span>&gt;</span>@("About".Label())<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">此例中有两个“标签”，分别是“About us” 跟 “About”，在前台在线编辑时可以直接修改“About”的值，</div><div class="line">但是“About us”由于是在title属性中，无法在线编辑，但是这又是需要翻译的（比如中文站点中它应该显示的是“关于我们”），</div><div class="line">这里将它写成title='@("About us",RawLabel())'后，在后台中（Development/Labels）也会出现这个标签，可以在后台修改这个文本。</div></pre></td></tr></table></figure>
+</li>
+<li><h4 id="MultiFilesField"><a href="#MultiFilesField" class="headerlink" title="MultiFilesField:"></a>MultiFilesField:</h4><p>多文件字段，通常用于可多选的输入控件，比如图片选择器等。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 辅助代码： --&gt;</span></div><div class="line">@foreach(var file in ContentHelper.SplitMultiFiles(ViewBag.Article.Images))</div><div class="line">&#123;</div><div class="line">	<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"@file"</span> <span class="attr">alt</span>=<span class="string">""</span>/&gt;</span></div><div class="line">&#125;</div><div class="line"><span class="comment">&lt;!-- 额外说明 --&gt;</span></div><div class="line">例如在可多选的图片选择器中，选择了多张图片时，数据库存储的值可能是：</div><div class="line">/Cms_Data/Contents/SampleSite/Test/image1.jpg,/Cms_Data/Contents/SampleSite/Test/image2.jpg</div><div class="line">但是我们要让图片显示出来时却需要把值拆开成两个图片地址来用。</div></pre></td></tr></table></figure>
+</li>
+<li><h4 id="QueryString"><a href="#QueryString" class="headerlink" title="QueryString:"></a>QueryString:</h4><p>顾名思义，显然是用于取URL的QueryString的。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 辅助代码： --&gt;</span></div><div class="line">@Page_Context.Current.PageRequestContext.AllQueryString["id"]</div><div class="line"><span class="comment">&lt;!-- 额外说明 --&gt;</span></div><div class="line">Kooboo的View中对请求上下文做了封装，你在Kooboo的View中无法使用Request.QueryString的方式取得参数值。</div></pre></td></tr></table></figure>
+</li>
+<li><h4 id="RenderHtmlBlock"><a href="#RenderHtmlBlock" class="headerlink" title="RenderHtmlBlock:"></a>RenderHtmlBlock:</h4><p>渲染HtmlBlock，用于在指定位置插入一个Html代码块。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 辅助代码： --&gt;</span></div><div class="line">@Html.FrontHtml().RenderHtmlBlock("blockName")</div><div class="line"><span class="comment">&lt;!-- 额外说明 --&gt;</span></div><div class="line">Html block可以在Kooboo CMS后台“Content/Html block”中管理，“blockName”为这里定义的Html block名字。</div></pre></td></tr></table></figure>
+</li>
+<li><h4 id="ContentQuery"><a href="#ContentQuery" class="headerlink" title="ContentQuery:"></a>ContentQuery:</h4><p>内容查询，查询TextContent除了用Data rule外也可以在View中灵活地进行查询，这里以一些例子来介绍用法：</p>
+</li>
+</ul>
+<p>通常使用规则是：（3、4、5的顺序根据实际需求调整）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">1. 从哪里查询（可以点的是“TextFolder”、“Schema”、“MediaFolder”）。</div><div class="line">2. 创建查询（点“CreateQuery”）。</div><div class="line">3. 指定过滤条件（“Where”子分类下的选项）。</div><div class="line">4. 排序结果（“Order”子分类下的选项）。</div><div class="line">5. 筛选数据（“Skip”、“Take”）。</div><div class="line">6. 查询结果处理（“Result”子分类下的选项，有需要进一步查询时用）。</div><div class="line">7. 进一步查询。</div></pre></td></tr></table></figure>
+<p>示例1：从 “Articles” 文件夹中查询出 “最近发布的” “5”篇 “Title” 字段包含 “Kooboo” 的文章。代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@&#123;</div><div class="line">	var list = ContentHelper.TextFolder(&quot;Articles&quot;)     //从哪里查询:文件夹“Articles”</div><div class="line">		.CreateQuery()                              //创建查询：CreateQuery</div><div class="line">		.WhereContains(&quot;Title&quot;, &quot;Kooboo&quot;)           //指定过滤条件：“Title”字段包含“Kooboo”</div><div class="line">		.OrderByDescending(&quot;UtcCreationDate&quot;)       //排序结果：“最近发布的”（按发布时间降序排序）</div><div class="line">		.Take(5);                                   //筛选数据：取出“5”篇文章</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>示例2： 从 “News” 内容类型查询 “UserKey” 字段值为 “sample-content-1” 的新闻 “最新的” “10”条 “评论”。代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@&#123;</div><div class="line">	var comments = ContentHelper.Schema(&quot;News&quot;)          //从哪里查询:内容类型“News”</div><div class="line">		.CreateQuery()                               //创建查询：CreateQuery</div><div class="line">		.WhereEquals(&quot;UserKey&quot;, &quot;sample-content-1&quot;)  //指定过滤条件：“UserKey”字段等于“sample-content-1”</div><div class="line">		.FirstOrDefault()                            //查询结果处理：取出符合条件的第一条数据（新闻）</div><div class="line">		.Children(&quot;Comment&quot;)                         //进一步查询: 查询“Comment”（评论）文件夹。</div><div class="line">		.OrderByDescending(&quot;UtcCreationDate&quot;)        //排序结果：“最近发布的”（按发布时间降序排序）</div><div class="line">		.Take(10);                                   //筛选数据：取出“10”条评论</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><h4 id="Forms"><a href="#Forms" class="headerlink" title="Forms:"></a>Forms:</h4>表单，用于生成一些向后台提交数据的表单代码。</li>
+</ul>
+<h2 id="4-自定义参数模板"><a href="#4-自定义参数模板" class="headerlink" title="4. 自定义参数模板"></a>4. 自定义参数模板</h2><p>Kooboo CMS允许给View添加参数，在添加View时如果需要参数，会显示参数相关的输入框。（如下图）<br><img src="define-view-parameter.jpg" alt="定义一个视图参数"><br><img src="add-view-parameter-to-page.jpg" alt="给视图“View”添加参数"></p>
+<p>有时候简单的文本输入框并不太友好，比如需要的参数是一个日期，我们更希望的是在页面中设置日期时有一个日期选择器。以SampleSite为例，可以通过以下做法：</p>
+<ol>
+<li><p>在当前视图（View）文件夹下（/Cms_Data/Sites/Templates/Views/Article.List）添加一个名为“ParameterTemplate.cshtml”的文件（名称不可更改）。</p>
+</li>
+<li><p>在里面自定义自己的参数界面，这是一个View，你可以在里面做数据查询、引入脚本、引入样式等，可参考SampleSite的写法。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span></div><div class="line">            Test1:</div><div class="line">        <span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"Parameters[0].Name"</span> <span class="attr">value</span>=<span class="string">"DateTime"</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"Parameters[0].DataType"</span> <span class="attr">value</span>=<span class="string">"DateTime"</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"Parameters[0].Value"</span> <span class="attr">value</span>=<span class="string">""</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line">                $(function () &#123;</div><div class="line">                    $('[name="Parameters[0].Value"]').datepicker();</div><div class="line">                &#125;);</div><div class="line">            <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span></div><div class="line">            Test2:</div><div class="line">        <span class="tag">&lt;/<span class="name">th</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"Parameters[1].Name"</span> <span class="attr">value</span>=<span class="string">"String"</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"Parameters[1].DataType"</span> <span class="attr">value</span>=<span class="string">"String"</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"Parameters[1].Value"</span> <span class="attr">value</span>=<span class="string">""</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>注意:</strong></p>
+<ol>
+<li><p>定义一个参数需要三个表单控件，比如本例中Test1：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!--用于定义参数名为“DateTime”--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"Parameters[0].Name"</span> <span class="attr">value</span>=<span class="string">"DateTime"</span> /&gt;</span></div><div class="line"><span class="comment">&lt;!--用于定义参数类型为“DateTime”--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"Parameters[0].DataType"</span> <span class="attr">value</span>=<span class="string">"DateTime"</span> /&gt;</span></div><div class="line"><span class="comment">&lt;!--用于接收参数值输入，定义一个文本框--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"Parameters[0].Value"</span> <span class="attr">value</span>=<span class="string">""</span> /&gt;</span></div><div class="line"><span class="comment">&lt;!--使用jquery datepicker插件将文本框变为日期选择器--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line">    $(function () &#123;</div><div class="line">        $('[name="Parameters[0].Value"]').datepicker();</div><div class="line">    &#125;);</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>如果使用了自定义模板，在View界面中可以不设置“Parameters”，有哪些参数由自定义模板决定。<br><img src="tip.jpg" alt="可以不设置“Parameters”"></p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="http://www.kooboo.me/docs/template-development/index.html" data-id="cixlu5yhe000stcldvy3cwux4" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+      
+
+    </footer>
+  </div>
+  
+    
+
+  
+</article>
+
+
+
+
+        </div>
+      
+    </div>
+  </div>
+    
+  <footer class="blog-footer">
+  <div class="container">
+    <div id="footer-info" class="inner">
+      copyright &copy; 2017 风情波涌
+      <a href="http://www.miibeian.gov.cn/" target="_blank">闽ICP备16035825号</a>
+      <br/>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/unslider/2.0.3/js/unslider-min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>
